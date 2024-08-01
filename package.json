@@ -1,0 +1,57 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "postinstall": "echo \"All dependencies were installed sucessfully ✅ You can now run tests by typing: npm run test\"",
+    "clean": "echo \"❌ Cleaning the reports and downloads folders\" && rimraf ./fixtures/download/* && rimraf ./allure-results/* && rimraf ./fixtures/temp/* && rimraf test-results/* && rimraf report/* && rimraf playwright-report/* && rimraf fixtures/test_data/temp/* && echo \"✅ All reports folders cleaned!\"",
+    "pretest": "npm run clean",
+    "posttest": "echo \"⌚ Saving the allure report\" && npx allure generate ./report/allure-results --single-file --clean -o ./report/allure-report && echo \"⌚ Allure report saved in ./report/allure-report folder\"",
+    "report": "npx allure generate ./report/allure-results --clean -o ./report/allure-report",
+    "posttest:history": "echo \"⌚ Creating the html page with parsed results and Saving the allure report\" && mkdir ./report/allure-results/history && cp ./report/allure-report/history/* ./report/allure-results/history && allure generate ./report/allure-results -o ./report/allure-report --clean && echo \"⌚ Allure report saved in allure-report folder\"",
+    "test": "npx playwright test || true",
+    "ci:run": "sh ./scripts/parametrized_run.sh",
+    "docker:run": "./scripts/docker_build_and_run.sh",
+    "merge-reports": "node ./utils/report_utils/MergeMonocartReports.js",
+    "format": "echo Formatting the code ⌛ && prettier --write ./projects/**/*.js ./pages/**/*.js ./fixtures/**/*.js && echo \"✅ Code formatted, ready to commit!\"",
+    "lint": "echo Linting the code ⌛ && eslint --fix && echo \"✅ Code linted, ready to commit!\"",
+    "docs": "jsdoc -d docs -c jsdoc.config.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.+(cjs|js|ts|tsx)": [
+      "eslint --fix"
+    ],
+    "**/*.+(cjs|js|ts|json)": [
+      "prettier --write"
+    ]
+  },
+  "keywords": [],
+  "author": "Valentin Lutchanka",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "fast-csv": "5.0.1",
+    "@playwright/test": "1.45.3",
+    "@types/node": "22.0.2",
+    "allure-commandline": "2.29.0",
+    "allure-playwright": "2.15.1",
+    "docdash": "^2.0.2",
+    "dotenv": "16.4.5",
+    "eslint": "9.8.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-jsdoc": "^48.10.2",
+    "eslint-plugin-playwright": "^1.6.2",
+    "eslint-plugin-prettier": "5.2.1",
+    "husky": "4.3.8",
+    "monocart-reporter": "^2.6.2",
+    "prettier": "3.3.3",
+    "rimraf": "3.0.0"
+  }
+}

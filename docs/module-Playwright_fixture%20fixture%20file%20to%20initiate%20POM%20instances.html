@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Playwright_fixture fixture file to initiate POM instances - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BasePage.html">BasePage</a><ul class='methods'><li data-type='method'><a href="BasePage.html#openPage">openPage</a></li><li data-type='method'><a href="BasePage.html#goBack">goBack</a></li><li data-type='method'><a href="BasePage.html#close">close</a></li><li data-type='method'><a href="BasePage.html#saveStorage">saveStorage</a></li></ul></li><li><a href="BasePage_BasePage.html">BasePage</a></li><li><a href="AccountDetailsComponent.html">AccountDetailsComponent</a><ul class='methods'><li data-type='method'><a href="AccountDetailsComponent.html#getTransactionByName">getTransactionByName</a></li><li data-type='method'><a href="AccountDetailsComponent.html#getTransferedAmount">getTransferedAmount</a></li></ul></li><li><a href="AccountDetailsComponent_AccountDetailsComponent.html">AccountDetailsComponent</a></li><li><a href="AccountsCreationComponent.html">AccountsCreationComponent</a></li><li><a href="AccountsCreationComponent_AccountsCreationComponent.html">AccountsCreationComponent</a></li><li><a href="AccountsOverviewComponent.html">AccountsOverviewComponent</a><ul class='methods'><li data-type='method'><a href="AccountsOverviewComponent.html#getAccountRecord">getAccountRecord</a></li><li data-type='method'><a href="AccountsOverviewComponent.html#getAvailableAccountBalance">getAvailableAccountBalance</a></li><li data-type='method'><a href="AccountsOverviewComponent.html#getAccountBalance">getAccountBalance</a></li></ul></li><li><a href="AccountsOverviewComponent_AccountsOverviewComponent.html">AccountsOverviewComponent</a></li><li><a href="BillPayComponent.html">BillPayComponent</a><ul class='methods'><li data-type='method'><a href="BillPayComponent.html#payBill">payBill</a></li><li data-type='method'><a href="BillPayComponent.html#getSuccessBillPayMessage">getSuccessBillPayMessage</a></li></ul></li><li><a href="BillPayComponent_BillPayComponent.html">BillPayComponent</a></li><li><a href="FindTransactions.html">FindTransactions</a></li><li><a href="FindTransactionsComponent_FindTransactionsComponent.html">FindTransactionsComponent</a></li><li><a href="RegisterComponent.html">RegisterComponent</a><ul class='methods'><li data-type='method'><a href="RegisterComponent.html#registerUser">registerUser</a></li><li data-type='method'><a href="RegisterComponent.html#getRegisterSuccessTitle">getRegisterSuccessTitle</a></li></ul></li><li><a href="RegisterComponent_RegisterComponent.html">RegisterComponent</a></li><li><a href="RequestLoanComponent.html">RequestLoanComponent</a><ul class='methods'><li data-type='method'><a href="RequestLoanComponent.html#applyForLoan">applyForLoan</a></li></ul></li><li><a href="RequestLoanComponent_RequestLoanComponent.html">RequestLoanComponent</a></li><li><a href="TransactionDetailsComponent.html">TransactionDetailsComponent</a></li><li><a href="TransactionDetailsComponent_TransactionDetailsComponent.html">TransactionDetailsComponent</a></li><li><a href="TransferFundsComponent.html">TransferFundsComponent</a><ul class='methods'><li data-type='method'><a href="TransferFundsComponent.html#getSuccessTransferMessage">getSuccessTransferMessage</a></li></ul></li><li><a href="TransferFundsComponent_TransferFundsComponent.html">TransferFundsComponent</a></li><li><a href="UpdateContactComponent.html">UpdateContactComponent</a><ul class='methods'><li data-type='method'><a href="UpdateContactComponent.html#updateUser">updateUser</a></li><li data-type='method'><a href="UpdateContactComponent.html#clearUserDataFields">clearUserDataFields</a></li></ul></li><li><a href="UpdateContactComponent_UpdateContactComponent.html">UpdateContactComponent</a></li><li><a href="UserMenuComponent.html">UserMenuComponent</a><ul class='methods'><li data-type='method'><a href="UserMenuComponent.html#getLoggedInMsg">getLoggedInMsg</a></li></ul></li><li><a href="UserMenuComponent_UserMenuComponent.html">UserMenuComponent</a></li><li><a href="HomePage.html">HomePage</a><ul class='methods'><li data-type='method'><a href="HomePage.html#loginUser">loginUser</a></li></ul></li><li><a href="HomePage_HomePage.html">HomePage</a></li></ul><h3>Modules</h3><ul><li><a href="module-Playwright_fixture%2520fixture%2520file%2520to%2520initiate%2520POM%2520instances.html">Playwright_fixture fixture file to initiate POM instances</a></li><li><a href="module-CSVHandler.html">CSVHandler</a></li><li><a href="module-UserBuilder.html">UserBuilder</a></li><li><a href="module-MonocartReporter.html">MonocartReporter</a><ul class='methods'><li data-type='method'><a href="module-MonocartReporter.html#~getDirectories">getDirectories</a></li><li data-type='method'><a href="module-MonocartReporter.html#~getReportDataList">getReportDataList</a></li><li data-type='method'><a href="module-MonocartReporter.html#~mergeReports">mergeReports</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#registerUser">registerUser</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Playwright_fixture fixture file to initiate POM instances</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Fixture file</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+            
+                <div class="description usertext"><p>Fixture file</p></div>
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~extension"><span class="type-signature type-signature-inner, constant">(inner, constant) </span>extension<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="~RegisterComponentTestArgs">RegisterComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>RegisterComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>registerComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="RegisterComponent.html">RegisterComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>RegisterComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>RegisterComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~UpdateContactComponentTestArgs">UpdateContactComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>UpdateContactComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>updateContactComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="UpdateContactComponent.html">UpdateContactComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>UpdateContactComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>UpdateContactComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~AccountsOverviewComponentTestArgs">AccountsOverviewComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>AccountsOverviewComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>accountsOverviewComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="AccountsOverviewComponent.html">AccountsOverviewComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>AccountsOverviewComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>AccountsOverviewComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~UserMenuComponentTestArgs">UserMenuComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>UserMenuComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>userMenuComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="UserMenuComponent.html">UserMenuComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>UserMenuComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>UserMenuComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~AccountsCreationComponentTestArgs">AccountsCreationComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>AccountsCreationComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>accountsCreationComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="AccountsCreationComponent.html">AccountsCreationComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>AccountsCreationComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>AccountsCreationComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~AccountDetailsComponentTestArgs">AccountDetailsComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>AccountDetailsComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>accountDetailsComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="AccountDetailsComponent.html">AccountDetailsComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>AccountDetailsComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>AccountDetailsComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~TransferFundsComponentTestArgs">TransferFundsComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>TransferFundsComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>transferFundsComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="TransferFundsComponent.html">TransferFundsComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>TransferFundsComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>TransferFundsComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~BillPayComponentTestArgs">BillPayComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>BillPayComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line46">line 46</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>billPayComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="BillPayComponent.html">BillPayComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>BillPayComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>BillPayComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~FindTransactionsComponentTestArgs">FindTransactionsComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>FindTransactionsComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line50">line 50</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>findTransactionsComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="FindTransactionsComponent.html">FindTransactionsComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>FindTransactionsComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>FindTransactionsComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~TransactionDetailsComponentTestArgs">TransactionDetailsComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>TransactionDetailsComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line54">line 54</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>transactionDetailsComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="TransactionDetailsComponent.html">TransactionDetailsComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>TransactionDetailsComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>TransactionDetailsComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~RequestLoanComponentTestArgs">RequestLoanComponentTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>RequestLoanComponent test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>requestLoanComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="RequestLoanComponent.html">RequestLoanComponent</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>RequestLoanComponent</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>RequestLoanComponent test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~HomePageTestArgs">HomePageTestArgs</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>HomePage test args</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fixtures_fixtureUI.js.html">fixtures/fixtureUI.js</a>, <a href="fixtures_fixtureUI.js.html#line62">line 62</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>homePage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="HomePage.html">HomePage</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>HomePage</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>HomePage test args</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Thu Aug 01 2024 08:49:02 GMT+0200 (Central European Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

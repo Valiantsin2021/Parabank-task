@@ -1,0 +1,64 @@
+name: Test local app in a docker container (Playwright)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+permissions:
+  contents: write
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout application code
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 17
+      - name: Checkout project
+      # install the dependencies
+        run: npm install
+      # Cache Docker layers
+      - name: Cache Docker layers
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            /usr/local/bin/docker
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/*.lock') }}
+      # build application Docker image and run tests
+      - name: Build image and test
+        run: |
+          chmod +x ./scripts/docker_build_and_run.sh
+          npm run docker:run
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reports
+          path: ./report
+          retention-days: 30
+      - name: Load test report history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: history
+          allure_results: report/allure-results
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
