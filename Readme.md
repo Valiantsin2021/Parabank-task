@@ -8,7 +8,9 @@
 
 ### Author
 
-### [Valiantsin Lutchanka](https://www.github.com/Valiantsin2021) [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+### [Valiantsin Lutchanka](https://www.github.com/Valiantsin2021)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![pages-build-deployment](https://github.com/Valiantsin2021/Parabank-task/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Valiantsin2021/Parabank-task/actions/workflows/pages/pages-build-deployment) [![Test local app in a docker container (Playwright)](https://github.com/Valiantsin2021/Parabank-task/actions/workflows/dockerized_tests.yml/badge.svg)](https://github.com/Valiantsin2021/Parabank-task/actions/workflows/dockerized_tests.yml) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields)](http://makeapullrequest.com)
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
@@ -16,9 +18,7 @@
 
 ![RUNS ON DOCKER CONTAINER](https://img.shields.io/badge/RUNS%20ON%20DOCKER%20CONTAINER-BLUE?style=for-the-badge)
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields)](http://makeapullrequest.com)
-
-[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/valiantsin-lutchanka/)
+[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/valiantsin-lutchanka/) [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://valiantsin2021.github.io/Portfolio-Valentin/)
 
 Framework is implemented as a monorepository. If you are going to implement new tests please create you branch, make your changes and create pull request. 
 
@@ -189,4 +189,9 @@ Thank you for choosing our Playwright Testing Framework. Happy testing!
 1.  Create a branch form the framework master branch
 2.  Write and debug your tests
 3.  Push the code to the repository
-4.  Create pull request to merge your changes to the main code of the framework 
+4.  Create pull request to merge your changes to the main code of the framework
+
+## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://valiantsin2021.github.io/Portfolio-Valentin/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/valiantsin-lutchanka/)
