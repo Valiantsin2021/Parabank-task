@@ -1,7 +1,7 @@
 name: Run Tests on Docker container (Playwright)
 on:
   push:
-    branches: [dev]
+    branches: [main]
   workflow_dispatch:
   pull_request:
     branches: [main]
