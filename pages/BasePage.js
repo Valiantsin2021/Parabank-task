@@ -8,11 +8,12 @@
 export class BasePage {
   /**
    * Class constructor for BasePage.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
 
   constructor(page) {
-    /**@type {import('@playwright/test').Page} page page passed in a constructor of the POM */
+    /**Page passed in a constructor of the POM @type {import('@playwright/test').Page} */
     this.page = page
   }
 

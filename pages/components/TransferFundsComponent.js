@@ -7,22 +7,23 @@
 export class TransferFundsComponent {
   /**
    * Class constructor for TransferFundsComponent.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
   constructor(page) {
-    /**@type {import('@playwright/test').Page} page passed in a constructor of the POM */
+    /**page passed in a constructor of the POM @type {import('@playwright/test').Page} */
     this.page = page
-    /**@type {import('@playwright/test').Locator} accountTypeSelect locator*/
+    /** accountTypeSelect locator @type {import('@playwright/test').Locator}*/
     this.transferFundsTitle = page.getByRole('heading', { name: 'Transfer Funds' })
-    /**@type {import('@playwright/test').Locator} amountInput locator*/
+    /** amountInput locator @type {import('@playwright/test').Locator}*/
     this.amountInput = page.locator('#amount')
-    /**@type {import('@playwright/test').Locator} fromAccountSelect locator*/
+    /** fromAccountSelect locator @type {import('@playwright/test').Locator}*/
     this.fromAccountSelect = page.locator('#fromAccountId')
-    /**@type {import('@playwright/test').Locator} toAccountSelect locator*/
+    /** toAccountSelect locator @type {import('@playwright/test').Locator}*/
     this.toAccountSelect = page.locator('#toAccountId')
-    /**@type {import('@playwright/test').Locator} transferFundsBtn locator*/
+    /** transferFundsBtn locator @type {import('@playwright/test').Locator}*/
     this.transferFundsBtn = page.locator('input[value="Transfer"]')
-    /**@type {import('@playwright/test').Locator} transferSuccessTitle locator*/
+    /** transferSuccessTitle locator @type {import('@playwright/test').Locator}*/
     this.transferSuccessTitle = page.getByRole('heading', { name: 'Transfer Complete!' })
   }
   /** Retrieves the success transfer message for a given transfer amount and account number.

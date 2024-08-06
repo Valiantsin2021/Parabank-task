@@ -6,9 +6,20 @@ import fs from 'fs'
 test.describe(`Parabank "Login" module:`, { tag: '@user' }, () => {
   test(`login/Logout happy path flow`, async ({ homePage, userMenuComponent, accountsOverviewComponent }) => {
     await test.step(`login user and verify welcome message`, async () => {
+      homePage.page.on('response', response => {
+        if (response.request().url() === 'https://parabank.parasoft.com/parabank/login.htm') {
+          expect.soft(response.status()).toEqual(302)
+        }
+        if (response.request().url() === 'https://parabank.parasoft.com/parabank/overview.htm') {
+          expect.soft(response.status()).toEqual(200)
+        }
+      })
       const user = JSON.parse(fs.readFileSync('./fixtures/test_data/user.json', 'utf8'))
       await homePage.loginUser(user.username, user.password)
       await expect(await userMenuComponent.getLoggedInMsg(user.firstname, user.lastname)).toBeVisible()
+      const cookie = await userMenuComponent.getCookies()
+      expect(cookie).toMatchObject([{ name: 'JSESSIONID' }])
+      expect(cookie[0]['value']).toMatch(/^[0-9A-F]{32}$/)
     })
     await test.step(`navigate to "Accounts Overview" module and  verify the default account exists`, async () => {
       await userMenuComponent.accountsOverviewLink.click()

@@ -7,22 +7,23 @@
 export class AccountsOverviewComponent {
   /**
    * Class constructor for AccountsOverviewComponent.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
   constructor(page) {
-    /**@type {import('@playwright/test').Page} page page passed in a constructor of the POM */
+    /**page page passed in a constructor of the POM @type {import('@playwright/test').Page}  */
     this.page = page
-    /**@type {import('@playwright/test').Locator} accountsOverviewTitle title locator*/
+    /** accountsOverviewTitle title locator @type {import('@playwright/test').Locator}*/
     this.accountsOverviewTitle = page.getByRole('heading', { name: 'Accounts Overview' })
-    /**@type {import('@playwright/test').Locator} accountTable locator*/
+    /** accountTable locator @type {import('@playwright/test').Locator}*/
     this.accountTable = page.locator('#accountTable tbody')
-    /**@type {import('@playwright/test').Locator} defaultAccountNumberCell locator*/
+    /** defaultAccountNumberCell locator @type {import('@playwright/test').Locator}*/
     this.defaultAccountNumberCell = this.accountTable.locator('tr').first().getByRole('link', { name: /\d{5}/ })
-    /**@type {import('@playwright/test').Locator} defaultBalanceAmountCell locator*/
+    /** defaultBalanceAmountCell locator @type {import('@playwright/test').Locator}*/
     this.defaultBalanceAmountCell = this.accountTable.locator('tr').first().locator('td').nth(1)
-    /**@type {import('@playwright/test').Locator} defaultAvailableAmountCell locator*/
+    /** defaultAvailableAmountCell locator @type {import('@playwright/test').Locator}*/
     this.defaultAvailableAmountCell = this.accountTable.locator('tr').first().locator('td').last()
-    /**@type {import('@playwright/test').Locator} totalAmountCell locator*/
+    /** totalAmountCell locator @type {import('@playwright/test').Locator}*/
     this.totalAmountCell = this.accountTable.locator('tr').last().getByRole('cell', { name: /\$\d*/ })
   }
   /**

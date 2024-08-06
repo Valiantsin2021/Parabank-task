@@ -28,10 +28,10 @@ Framework is implemented as a monorepository. If you are going to implement new 
 
 - Fixtures containing temp test data, downloads, schemas, constants and Playwright fixture files (merged) `./fixtures`
 - POM with page classes `./pages`
-- Tests divided by 'Smoke_tests' and 'UI_tests' suites
-- Tests divided per types by directories `./projects`: UI and Smoke tests have tags annotations `./projects/ui_tests`
+- Tests divided by 'Smoke_tests', 'UI_tests', and 'Visual_tests' suites
+- Tests divided per types by directories `./projects`: all tests have tags annotations to run selectively with grep
 - Automated documentation generation based on JSDOC comments `./docs`
-- Utils modules `./utils`
+- Utils modules `./utils` contains test data factory and csv reader module in `./utils/data_processors` and Monocart reports merger module in `./utils/report_utils`
 - sh scripts with various launch scenarious `./scripts`
 - Junit and Monocart reports `./report`
 - Allure report `./report/allure-report`
@@ -59,6 +59,12 @@ Implementation:
 - Test user creation abstracted to auth_ui.setup.js (run as setup before the tests)
 - Test users for each test run saved in `./fixtures/test_data/user.json` and `./fixtures/test_data/@register_test_user.json`
 - UI tests leverage fixtures to reduce the boilerplate
+
+## 1.1 Visual regression tests
+
+- Visual tests isolated in a separate project (test suite)
+- Visual tests run only if CI environment variable `CI=true` is set and should be run on Docker container for screenshot consistency
+- Screenshots templates for visual tests located in `.snapshots` folder and grouped per test
 
 ## 2. Functionalities
 

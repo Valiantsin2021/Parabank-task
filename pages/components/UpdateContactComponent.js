@@ -8,22 +8,23 @@ import { RegisterComponent } from './RegisterComponent'
 export class UpdateContactComponent extends RegisterComponent {
   /**
    * Class constructor for UpdateContactComponent.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
 
   constructor(page) {
     super(page)
-    /**@type {import('@playwright/test').Page} Page instance passed in the constructor of the POM.*/
+    /**Page instance passed in the constructor of the POM. @type {import('@playwright/test').Page} */
     this.page = page
-    /**@type {import('@playwright/test').Locator} updateProfileTitle title locator*/
+    /** updateProfileTitle title locator @type {import('@playwright/test').Locator}*/
     this.updateProfileTitle = page.getByRole('heading', { name: 'Update Profile' })
-    /**@type {import('@playwright/test').Locator} updateProfileBtn button locator*/
+    /** updateProfileBtn button locator @type {import('@playwright/test').Locator}*/
     this.updateProfileBtn = page.locator('input[value="Update Profile"]')
-    /**@type {import('@playwright/test').Locator} updateSuccessTitle title locator*/
+    /** updateSuccessTitle title locator @type {import('@playwright/test').Locator}*/
     this.updateSuccessTitle = page.getByRole('heading', { name: 'Profile Updated' })
-    /**@type {import('@playwright/test').Locator} updateSuccessMsg message locator*/
+    /** updateSuccessMsg message locator @type {import('@playwright/test').Locator}*/
     this.updateSuccessMsg = page.getByText('Your updated address and phone number have been added to the system.')
-    /**@type {import('@playwright/test').Locator} contactForm message locator*/
+    /** contactForm message locator @type {import('@playwright/test').Locator}*/
     this.contactForm = page.locator('form[name="contact"]')
   }
 

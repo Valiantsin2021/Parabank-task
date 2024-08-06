@@ -7,26 +7,27 @@
 export class TransactionDetailsComponent {
   /**
    * Class constructor for TransactionDetailsComponent.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
   constructor(page) {
-    /**@type {import('@playwright/test').Page} page passed in a constructor of the POM */
+    /**page passed in a constructor of the POM @type {import('@playwright/test').Page} */
     this.page = page
-    /**@type {import('@playwright/test').Locator} accountTypeSelect locator*/
+    /** accountTypeSelect locator @type {import('@playwright/test').Locator}*/
     this.accountTypeSelect = page.locator('#type')
-    /**@type {import('@playwright/test').Locator} transactionDetailsTitle locator*/
+    /** transactionDetailsTitle locator @type {import('@playwright/test').Locator}*/
     this.transactionDetailsTitle = page.getByRole('heading', { name: 'Transaction Details' })
-    /**@type {import('@playwright/test').Locator} transactionTableRows locator*/
+    /** transactionTableRows locator @type {import('@playwright/test').Locator}*/
     this.transactionTableRows = page.locator('table tbody tr')
-    /**@type {import('@playwright/test').Locator} transactionId locator*/
+    /** transactionId locator @type {import('@playwright/test').Locator}*/
     this.transactionId = this.transactionTableRows.filter({ hasText: 'Transaction ID:' }).locator('td').last()
-    /**@type {import('@playwright/test').Locator} transactionDate locator*/
+    /** transactionDate locator @type {import('@playwright/test').Locator}*/
     this.transactionDate = this.transactionTableRows.filter({ hasText: 'Date:' }).locator('td').last()
-    /**@type {import('@playwright/test').Locator} transactionDescription locator*/
+    /** transactionDescription locator @type {import('@playwright/test').Locator}*/
     this.transactionDescription = this.transactionTableRows.filter({ hasText: 'Description:	' }).locator('td').last()
-    /**@type {import('@playwright/test').Locator} transactionType locator*/
+    /** transactionType locator @type {import('@playwright/test').Locator}*/
     this.transactionType = this.transactionTableRows.filter({ hasText: 'Type:' }).locator('td').last()
-    /**@type {import('@playwright/test').Locator} transactionAmount locator*/
+    /** transactionAmount locator @type {import('@playwright/test').Locator}*/
     this.transactionAmount = this.transactionTableRows.filter({ hasText: 'Amount:' }).locator('td').last()
   }
 }

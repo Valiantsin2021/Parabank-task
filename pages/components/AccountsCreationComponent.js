@@ -7,24 +7,25 @@
 export class AccountsCreationComponent {
   /**
    * Class constructor for AccountsCreationComponent.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
   constructor(page) {
-    /**@type {import('@playwright/test').Page} page passed in a constructor of the POM */
+    /**page passed in a constructor of the POM @type {import('@playwright/test').Page} */
     this.page = page
-    /**@type {import('@playwright/test').Locator} accountTypeSelect locator*/
+    /** accountTypeSelect locator @type {import('@playwright/test').Locator}*/
     this.accountTypeSelect = page.locator('#type')
-    /**@type {import('@playwright/test').Locator} existingAccountsSelect locator*/
+    /** existingAccountsSelect locator @type {import('@playwright/test').Locator}*/
     this.existingAccountsSelect = page.locator('#fromAccountId')
-    /**@type {import('@playwright/test').Locator} openAccountBtn locator*/
+    /** openAccountBtn locator @type {import('@playwright/test').Locator}*/
     this.openAccountBtn = page.locator('input[value="Open New Account"]')
-    /**@type {import('@playwright/test').Locator} openAccountTitle locator*/
+    /** openAccountTitle locator @type {import('@playwright/test').Locator}*/
     this.openAccountTitle = page.getByRole('heading', { name: 'Open New Account' })
-    /**@type {import('@playwright/test').Locator} openSuccessMsg locator*/
+    /** openSuccessMsg locator @type {import('@playwright/test').Locator}*/
     this.openSuccessMsg = page.getByText('Congratulations, your account is now open.')
-    /**@type {import('@playwright/test').Locator} openAccountSuccessTitle locator*/
+    /** openAccountSuccessTitle locator @type {import('@playwright/test').Locator}*/
     this.openAccountSuccessTitle = page.getByRole('heading', { name: 'Account Opened!' })
-    /**@type {import('@playwright/test').Locator} newAccountNumber locator*/
+    /** newAccountNumber locator @type {import('@playwright/test').Locator}*/
     this.newAccountNumber = page.locator('#newAccountId')
   }
 

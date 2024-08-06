@@ -5,7 +5,6 @@ import { CSVHandler } from '@utils/data_processors/CSVHandler.js'
 import { UserBuilder } from '@utils/data_processors/DataBuilder.js'
 import fs from 'fs'
 const billPayPairwisePath = './fixtures/test_data/bill_pay_pairwise.csv'
-import { allure } from 'allure-playwright'
 
 test.describe(`Parabank "Bill Pay" module:`, { tag: '@account' }, () => {
   const user = JSON.parse(fs.readFileSync('./fixtures/test_data/user.json', 'utf8'))

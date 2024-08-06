@@ -8,36 +8,41 @@ import { BasePage } from '@pages/BasePage.js'
 export class HomePage extends BasePage {
   /**
    * Class constructor for HomePage.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
 
   constructor(page) {
     super(page)
-    /**@type {import('@playwright/test').Page} Page instance passed in the constructor of the POM.*/
+    /**Page instance passed in the constructor of the POM. @type {import('@playwright/test').Page} */
     this.page = page
-    /**@type {import('@playwright/test').Locator} Home page logo title locator */
+    /**Home page leftPanel locator @type {import('@playwright/test').Locator}  */
+    this.leftPanel = page.locator('#leftPanel')
+    /** Home page welcomeMessage locator  @type {import('@playwright/test').Locator}*/
+    this.welcomeMessage = page.locator('p.smallText')
+    /** Home page logo title locator @type {import('@playwright/test').Locator}*/
     this.logoTitle = page.getByTitle('ParaBank')
-    /**@type {import('@playwright/test').Locator} solutions menu locator */
+    /**solutions menu locator @type {import('@playwright/test').Locator}*/
     this.solutionsLink = page.getByText('Solutions')
-    /**@type {import('@playwright/test').Locator} about us menu locator */
+    /**about us menu locator @type {import('@playwright/test').Locator}*/
     this.aboutUsLink = page.getByRole('link', { name: 'About Us' })
-    /**@type {import('@playwright/test').Locator} Services menu locator */
+    /**Services menu locator @type {import('@playwright/test').Locator}*/
     this.servicesLink = page.getByRole('link', { name: 'Services' })
-    /**@type {import('@playwright/test').Locator} Products menu locator */
+    /**Products menu locator @type {import('@playwright/test').Locator}*/
     this.productsLink = page.getByRole('link', { name: 'Products' })
-    /**@type {import('@playwright/test').Locator} Locations menu locator */
+    /**Locations menu locator @type {import('@playwright/test').Locator} */
     this.locationsLink = page.getByRole('link', { name: 'Locations' })
-    /**@type {import('@playwright/test').Locator} Admin Page menu locator */
+    /**Admin Page menu locator @type {import('@playwright/test').Locator} */
     this.adminPageLink = page.getByRole('link', { name: 'Admin Page' })
-    /**@type {import('@playwright/test').Locator} username input locator */
+    /**username input locator @type {import('@playwright/test').Locator} */
     this.usernameInput = page.locator('[name="username"]')
-    /**@type {import('@playwright/test').Locator} password input locator */
+    /**password input locator @type {import('@playwright/test').Locator} */
     this.passwordInput = page.locator('[name="password"]')
-    /**@type {import('@playwright/test').Locator} Login button locator */
+    /**Login button locator @type {import('@playwright/test').Locator} */
     this.loginBtn = page.getByRole('button', { name: 'Log In' })
-    /**@type {import('@playwright/test').Locator} Forgot login link locator */
+    /**Forgot login link locator @type {import('@playwright/test').Locator} */
     this.forgotLoginLink = page.getByRole('link', { name: 'Forgot login info?' })
-    /**@type {import('@playwright/test').Locator} Register link locator */
+    /**Register link locator @type {import('@playwright/test').Locator} */
     this.registerLink = page.getByRole('link', { name: 'Register' })
   }
   /**
@@ -51,5 +56,14 @@ export class HomePage extends BasePage {
     await this.usernameInput.fill(username)
     await this.passwordInput.fill(password)
     await this.loginBtn.click()
+  }
+
+  /**
+   * Retrieves all cookies from the current page context.
+   *
+   * @return {Promise<Array<Object>>} An array of cookie objects.
+   */
+  async getCookies() {
+    return await this.page.context().cookies()
   }
 }
