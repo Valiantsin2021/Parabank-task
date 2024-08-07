@@ -18,6 +18,14 @@ test.describe.serial(`Parabank "Create Account" module:`, { tag: '@account' }, (
       defaultAccountNumber = await accountsOverviewComponent.defaultAccountNumberCell.innerText()
     })
     await test.step(`navigate to "Open New Account" module and open new account`, async () => {
+      accountsCreationComponent.page.on('response', async response => {
+        if (response.request().url().includes('https://parabank.parasoft.com/parabank/services_proxy/bank/createAccount')) {
+          expect(response.status()).toBe(200)
+          const body = await response.json()
+          expect(body['type']).toBe(constants.checkingAccountType)
+          expect(body['balance']).toBe(0)
+        }
+      })
       await userMenuComponent.openNewAccountLink.click()
       await expect.soft(accountsCreationComponent.openAccountTitle).toBeVisible()
       await accountsCreationComponent.createNewAccount(constants.checkingAccountType, defaultAccountNumber)

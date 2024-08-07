@@ -71,7 +71,7 @@ Implementation:
 - Data builder factory using faker library
 - CVS handler module to consume csv data files
 - Dockerfile parametrized with shell script
-- Code linting and formatting
+- Static analysis via Code linting and formatting (eslint + prettier)
 - Jsdoc generation with script `npm run docs`
 - Precommit hook for staged files using Husky
 - GitHub Actions to run tests dockerized on CI
