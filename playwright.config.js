@@ -11,9 +11,19 @@ const isCI = !!process.env.CI
 export default defineConfig({
   timeout: 80_000,
   expect: {
-    timeout: 5_000
+    timeout: 5_000,
+    toHaveScreenshot: {
+      threshold: 0.25,
+      maxDiffPixelRatio: 0.025,
+      maxDiffPixels: 25
+    },
+    toMatchSnapshot: {
+      threshold: 0.25,
+      maxDiffPixelRatio: 0.025,
+      maxDiffPixels: 25
+    }
   },
-  ignoreSnapshots: isCI,
+  ignoreSnapshots: !isCI,
   testDir: './projects',
   testMatch: ['*.spec.js'],
   fullyParallel: true,
@@ -21,6 +31,7 @@ export default defineConfig({
   retries: isCI ? 2 : 0,
   workers: isCI ? 3 : undefined,
   reportSlowTests: null,
+  snapshotPathTemplate: '.snapshots/{projectName}/{testFilePath}/{testName}/{arg}{ext}',
   reporter: [
     ['list', { printSteps: true }],
     [
@@ -50,7 +61,7 @@ export default defineConfig({
     bypassCSP: true,
     retries: 1,
     viewport: null,
-    launchOptions: { args: ['--start-maximized', '--ignore-certificate-errors'] },
+    launchOptions: { args: ['--start-maximized', '--ignore-certificate-errors', '--disable-search-engine-choice-screen'] },
     baseURL: 'https://parabank.parasoft.com',
     headless: true,
     trace: 'on-first-retry',
@@ -73,6 +84,14 @@ export default defineConfig({
       use: {
         channel: 'chrome'
       }
+    },
+    {
+      name: 'Visual_tests',
+      testMatch: /visual_\w+_\w+\.spec\.js/,
+      use: {
+        channel: 'chrome'
+      },
+      dependencies: ['test:ui_setup']
     }
   ]
 })

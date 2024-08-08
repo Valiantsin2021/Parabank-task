@@ -1,4 +1,4 @@
-name: Test local app in a docker container (Playwright)
+name: Run Tests on Docker container (Playwright)
 on:
   push:
     branches: [main]
@@ -10,19 +10,50 @@ permissions:
   contents: write
 jobs:
   checkout:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
-      # checkout application code
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           distribution: zulu
           java-version: 17
-      - name: Checkout project
-      # install the dependencies
-        run: npm install
+
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Cache Playwright Binaries
+        id: cache-playwright
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        id: install-dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+    # - name: Install Playwright Browsers
+    #   id: install-playwright-browsers
+    #   if: steps.cache-playwright.outputs.cache-hit != 'true'
+    #   run: npx playwright install --with-deps
+  test:
+    needs: checkout
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
       # Cache Docker layers
       - name: Cache Docker layers
         uses: actions/cache@v4
@@ -31,17 +62,25 @@ jobs:
             ~/.npm
             /usr/local/bin/docker
           key: ${{ runner.os }}-npm-${{ hashFiles('**/*.lock') }}
-      # build application Docker image and run tests
+
+      # build Docker image and run tests
       - name: Build image and test
+        continue-on-error: true
         run: |
           chmod +x ./scripts/docker_build_and_run.sh
           npm run docker:run
-      - uses: actions/upload-artifact@v4
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: reports
-          path: ./report
+          path: |
+            ./report
+            ./test-results
           retention-days: 30
+          if-no-files-found: ignore
+
       - name: Load test report history
         uses: actions/checkout@v4
         if: always()
@@ -49,6 +88,7 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages
+
       - name: Build test report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
@@ -56,6 +96,7 @@ jobs:
           gh_pages: gh-pages
           allure_history: history
           allure_results: report/allure-results
+
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4

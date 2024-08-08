@@ -7,36 +7,37 @@
 export class RequestLoanComponent {
   /**
    * Class constructor for RequestLoanComponent.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
   constructor(page) {
-    /**@type {import('@playwright/test').Page} page passed in a constructor of the POM */
+    /**page passed in a constructor of the POM @type {import('@playwright/test').Page} */
     this.page = page
-    /**@type {import('@playwright/test').Locator} requestLoanTitle locator*/
+    /** requestLoanTitle locator @type {import('@playwright/test').Locator}*/
     this.requestLoanTitle = page.getByRole('heading', { name: 'Apply for a Loan' })
-    /**@type {import('@playwright/test').Locator} loanAmountInput locator*/
+    /** loanAmountInput locator @type {import('@playwright/test').Locator}*/
     this.loanAmountInput = page.locator('#amount')
-    /**@type {import('@playwright/test').Locator} downPaymentInput locator*/
+    /** downPaymentInput locator @type {import('@playwright/test').Locator}*/
     this.downPaymentInput = page.locator('#downPayment')
-    /**@type {import('@playwright/test').Locator} fromAccountSelect locator*/
+    /** fromAccountSelect locator @type {import('@playwright/test').Locator}*/
     this.fromAccountSelect = page.locator('#fromAccountId')
-    /**@type {import('@playwright/test').Locator} applyNowBtn locator*/
+    /** applyNowBtn locator @type {import('@playwright/test').Locator}*/
     this.applyNowBtn = page.locator('input[value="Apply Now"]')
-    /**@type {import('@playwright/test').Locator} requestLoanProcessedTitle locator*/
+    /** requestLoanProcessedTitle locator @type {import('@playwright/test').Locator}*/
     this.requestLoanProcessedTitle = page.getByRole('heading', { name: 'Loan Request Processed' })
-    /**@type {import('@playwright/test').Locator} loanRequestTableRows locator*/
+    /** loanRequestTableRows locator @type {import('@playwright/test').Locator}*/
     this.loanRequestTableRows = page.locator('table tbody tr')
-    /**@type {import('@playwright/test').Locator} loanProviderName locator*/
+    /** loanProviderName locator @type {import('@playwright/test').Locator}*/
     this.loanProviderName = page.locator('loanProviderName')
-    /**@type {import('@playwright/test').Locator} responseDate locator*/
+    /** responseDate locator @type {import('@playwright/test').Locator}*/
     this.responseDate = page.locator('#responseDate')
-    /**@type {import('@playwright/test').Locator} loanStatus locator*/
+    /** loanStatus locator @type {import('@playwright/test').Locator}*/
     this.loanStatus = page.locator('#loanStatus')
-    /**@type {import('@playwright/test').Locator} loanRequestDeniedMsg locator*/
+    /** loanRequestDeniedMsg locator @type {import('@playwright/test').Locator}*/
     this.loanRequestDeniedMsg = page.locator('#loanRequestDenied')
-    /**@type {import('@playwright/test').Locator} loanRequestApproved locator*/
+    /** loanRequestApproved locator @type {import('@playwright/test').Locator}*/
     this.loanRequestApproved = page.locator('#loanRequestApproved')
-    /**@type {import('@playwright/test').Locator} loanAccountId locator*/
+    /** loanAccountId locator @type {import('@playwright/test').Locator}*/
     this.loanAccountId = page.locator('#newAccountId')
   }
   /**

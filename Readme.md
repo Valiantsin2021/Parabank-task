@@ -8,7 +8,9 @@
 
 ### Author
 
-### [Valiantsin Lutchanka](https://www.github.com/Valiantsin2021) [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+### [Valiantsin Lutchanka](https://www.github.com/Valiantsin2021)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![pages-build-deployment](https://github.com/Valiantsin2021/Parabank-task/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Valiantsin2021/Parabank-task/actions/workflows/pages/pages-build-deployment) [![Test local app in a docker container (Playwright)](https://github.com/Valiantsin2021/Parabank-task/actions/workflows/dockerized_tests.yml/badge.svg)](https://github.com/Valiantsin2021/Parabank-task/actions/workflows/dockerized_tests.yml) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields)](http://makeapullrequest.com)
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
@@ -16,9 +18,7 @@
 
 ![RUNS ON DOCKER CONTAINER](https://img.shields.io/badge/RUNS%20ON%20DOCKER%20CONTAINER-BLUE?style=for-the-badge)
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields)](http://makeapullrequest.com)
-
-[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/valiantsin-lutchanka/)
+[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/valiantsin-lutchanka/) [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://valiantsin2021.github.io/Portfolio-Valentin/)
 
 Framework is implemented as a monorepository. If you are going to implement new tests please create you branch, make your changes and create pull request. 
 
@@ -28,10 +28,10 @@ Framework is implemented as a monorepository. If you are going to implement new 
 
 - Fixtures containing temp test data, downloads, schemas, constants and Playwright fixture files (merged) `./fixtures`
 - POM with page classes `./pages`
-- Tests divided by 'Smoke_tests' and 'UI_tests' suites
-- Tests divided per types by directories `./projects`: UI and Smoke tests have tags annotations `./projects/ui_tests`
+- Tests divided by 'Smoke_tests', 'UI_tests', and 'Visual_tests' suites
+- Tests divided per types by directories `./projects`: all tests have tags annotations to run selectively with grep
 - Automated documentation generation based on JSDOC comments `./docs`
-- Utils modules `./utils`
+- Utils modules `./utils` contains test data factory and csv reader module in `./utils/data_processors` and Monocart reports merger module in `./utils/report_utils`
 - sh scripts with various launch scenarious `./scripts`
 - Junit and Monocart reports `./report`
 - Allure report `./report/allure-report`
@@ -60,12 +60,18 @@ Implementation:
 - Test users for each test run saved in `./fixtures/test_data/user.json` and `./fixtures/test_data/@register_test_user.json`
 - UI tests leverage fixtures to reduce the boilerplate
 
+## 1.1 Visual regression tests
+
+- Visual tests isolated in a separate project (test suite)
+- Visual tests run only if CI environment variable `CI=true` is set and should be run on Docker container for screenshot consistency
+- Screenshots templates for visual tests located in `.snapshots` folder and grouped per test
+
 ## 2. Functionalities
 
 - Data builder factory using faker library
 - CVS handler module to consume csv data files
 - Dockerfile parametrized with shell script
-- Code linting and formatting
+- Static analysis via Code linting and formatting (eslint + prettier)
 - Jsdoc generation with script `npm run docs`
 - Precommit hook for staged files using Husky
 - GitHub Actions to run tests dockerized on CI
@@ -189,4 +195,9 @@ Thank you for choosing our Playwright Testing Framework. Happy testing!
 1.  Create a branch form the framework master branch
 2.  Write and debug your tests
 3.  Push the code to the repository
-4.  Create pull request to merge your changes to the main code of the framework 
+4.  Create pull request to merge your changes to the main code of the framework
+
+## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://valiantsin2021.github.io/Portfolio-Valentin/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/valiantsin-lutchanka/)

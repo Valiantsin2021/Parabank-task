@@ -19,6 +19,14 @@ test.describe(`Parabank "Loan" module:`, { tag: '@user' }, () => {
     accountDetailsComponent,
     requestLoanComponent
   }) => {
+    requestLoanComponent.page.on('response', async response => {
+      if (response.request().url().includes('https://parabank.parasoft.com/parabank/services_proxy/bank/requestLoan')) {
+        expect(response.status()).toBe(200)
+        const body = await response.json()
+        expect(body['approved']).toBe(true)
+        expect(body['loanProviderName']).toBe(constants.loanProvider)
+      }
+    })
     await requestLoanComponent.applyForLoan(constants.validLoanAmount, constants.validDownAmount, defaultAccountNumber)
     await expect.soft(requestLoanComponent.loanStatus).toHaveText(constants.loanApprovedStatusMsg)
     await expect.soft(requestLoanComponent.loanRequestApproved).toBeVisible()
@@ -32,6 +40,16 @@ test.describe(`Parabank "Loan" module:`, { tag: '@user' }, () => {
   test(`request a Loan with a 'Down' payment higher to the available balance result in ${constants.loanDeniedStatusMsg} status`, async ({
     requestLoanComponent
   }) => {
+    requestLoanComponent.page.on('response', async response => {
+      if (response.request().url().includes('https://parabank.parasoft.com/parabank/services_proxy/bank/requestLoan')) {
+        expect(response.status()).toBe(200)
+        const body = await response.json()
+        expect(body['approved']).toBe(false)
+        expect(body['loanProviderName']).toBe(constants.loanProvider)
+        expect(body['message']).toBe(constants.loanDeniedDownPaymentAPIMsg)
+        expect(body['accountId']).toBe(null)
+      }
+    })
     await test.step(`navigate to "Loan" module and apply for a loan`, async () => {
       await requestLoanComponent.applyForLoan(constants.validLoanAmount, constants.invalidDownAmount, defaultAccountNumber)
       await expect.soft(requestLoanComponent.loanStatus).toHaveText(constants.loanDeniedStatusMsg)

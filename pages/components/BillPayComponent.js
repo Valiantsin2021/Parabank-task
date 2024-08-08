@@ -7,54 +7,55 @@
 export class BillPayComponent {
   /**
    * Class constructor for BillPayComponent.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
   constructor(page) {
-    /**@type {import('@playwright/test').Page} page passed in a constructor of the POM */
+    /**page passed in a constructor of the POM @type {import('@playwright/test').Page} */
     this.page = page
-    /**@type {import('@playwright/test').Locator} billPayTitle locator*/
+    /** billPayTitle locator @type {import('@playwright/test').Locator}*/
     this.billPayTitle = page.getByRole('heading', { name: 'Bill Payment Service' })
-    /**@type {import('@playwright/test').Locator} nameInput locator*/
+    /** nameInput locator @type {import('@playwright/test').Locator}*/
     this.nameInput = page.locator('input[name="payee.name"]')
-    /**@type {import('@playwright/test').Locator} addressInput locator*/
+    /** addressInput locator @type {import('@playwright/test').Locator}*/
     this.addressInput = page.locator('input[name="payee.address.street"]')
-    /**@type {import('@playwright/test').Locator} cityInput locator*/
+    /** cityInput locator @type {import('@playwright/test').Locator}*/
     this.cityInput = page.locator('input[name="payee.address.city"]')
-    /**@type {import('@playwright/test').Locator} stateInput locator*/
+    /** stateInput locator @type {import('@playwright/test').Locator}*/
     this.stateInput = page.locator('input[name="payee.address.state"]')
-    /**@type {import('@playwright/test').Locator} zipcodeInput locator*/
+    /** zipcodeInput locator @type {import('@playwright/test').Locator}*/
     this.zipcodeInput = page.locator('input[name="payee.address.zipCode"]')
-    /**@type {import('@playwright/test').Locator} phoneNumberInput locator*/
+    /** phoneNumberInput locator @type {import('@playwright/test').Locator}*/
     this.phoneNumberInput = page.locator('input[name="payee.phoneNumber"]')
-    /**@type {import('@playwright/test').Locator} accountInput locator*/
+    /** accountInput locator @type {import('@playwright/test').Locator}*/
     this.accountInput = page.locator('input[name="payee.accountNumber"]')
-    /**@type {import('@playwright/test').Locator} verifyAccountInput locator*/
+    /** verifyAccountInput locator @type {import('@playwright/test').Locator}*/
     this.verifyAccountInput = page.locator('input[name="verifyAccount"]')
-    /**@type {import('@playwright/test').Locator} billPayTitle locator*/
+    /** billPayTitle locator @type {import('@playwright/test').Locator}*/
     this.amountInput = page.locator('input[name="amount"]')
-    /**@type {import('@playwright/test').Locator} accountSelect locator*/
+    /** accountSelect locator @type {import('@playwright/test').Locator}*/
     this.accountSelect = page.locator('select[name="fromAccountId"]')
-    /**@type {import('@playwright/test').Locator} sendPaymentBtn locator*/
+    /** sendPaymentBtn locator @type {import('@playwright/test').Locator}*/
     this.sendPaymentBtn = page.locator('input[value="Send Payment"]')
-    /**@type {import('@playwright/test').Locator} sendPaymentBtn locator*/
+    /** sendPaymentBtn locator @type {import('@playwright/test').Locator}*/
     this.billPaySuccessTitle = page.getByRole('heading', { name: 'Bill Payment Complete' })
-    /**@type {import('@playwright/test').Locator} First name error message locator */
+    /** First name  error message locator @type {import('@playwright/test').Locator} */
     this.nameErrorMsg = page.getByText('Payee name is required.')
-    /**@type {import('@playwright/test').Locator} addressErrorMsg error message locator */
+    /** addressErrorMsg error  message locator @type {import('@playwright/test').Locator} */
     this.addressErrorMsg = page.getByText('Address is required.')
-    /**@type {import('@playwright/test').Locator} cityErrorMsg error message locator */
+    /** cityErrorMsg error  message locator @type {import('@playwright/test').Locator} */
     this.cityErrorMsg = page.getByText('City is required.')
-    /**@type {import('@playwright/test').Locator} stateErrorMsg error message locator */
+    /** stateErrorMsg error  message locator @type {import('@playwright/test').Locator} */
     this.stateErrorMsg = page.getByText('State is required.')
-    /**@type {import('@playwright/test').Locator} First name error message locator */
+    /** First name  error message locator @type {import('@playwright/test').Locator} */
     this.zipcodeErrorMsg = page.getByText('Zip Code is required.')
-    /**@type {import('@playwright/test').Locator} First name error message locator */
+    /** First name  error message locator @type {import('@playwright/test').Locator} */
     this.phoneNumberErrorMsg = page.getByText('Phone number is required.')
-    /**@type {import('@playwright/test').Locator} accountErrorMsg error message locator */
+    /** accountErrorMsg error  message locator @type {import('@playwright/test').Locator} */
     this.accountErrorMsg = page.getByText('Account number is required.').first()
-    /**@type {import('@playwright/test').Locator} verifyAccountErrorMsg error message locator */
+    /** verifyAccountErrorMsg error  message locator @type {import('@playwright/test').Locator} */
     this.verifyAccountErrorMsg = page.getByText('Account number is required.').last()
-    /**@type {import('@playwright/test').Locator} amountErrorMsg error message locator */
+    /** amountErrorMsg error  message locator @type {import('@playwright/test').Locator} */
     this.amountErrorMsg = page.getByText('The amount cannot be empty.')
   }
   /**

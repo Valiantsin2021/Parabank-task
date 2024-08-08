@@ -7,42 +7,43 @@
 export class FindTransactionsComponent {
   /**
    * Class constructor for FindTransactions.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
   constructor(page) {
-    /**@type {import('@playwright/test').Page} page passed in a constructor of the POM */
+    /**page passed in a constructor of the POM @type {import('@playwright/test').Page} */
     this.page = page
-    /**@type {import('@playwright/test').Locator} findTransactionsTitle locator*/
+    /** findTransactionsTitle locator @type {import('@playwright/test').Locator}*/
     this.findTransactionsTitle = page.getByRole('heading', { name: 'Find Transactions' })
-    /**@type {import('@playwright/test').Locator} findTransactionsSuccessTitle locator*/
+    /** findTransactionsSuccessTitle locator @type {import('@playwright/test').Locator}*/
     this.findTransactionsSuccessTitle = page.getByRole('heading', { name: 'Transaction Results' })
-    /**@type {import('@playwright/test').Locator} accountSelect locator*/
+    /** accountSelect locator @type {import('@playwright/test').Locator}*/
     this.accountSelect = page.locator('#accountId')
-    /**@type {import('@playwright/test').Locator} transactionIdinput locator*/
+    /** transactionIdinput locator @type {import('@playwright/test').Locator}*/
     this.transactionIdinput = page.locator('#transactionId')
-    /**@type {import('@playwright/test').Locator} transactionDateInput locator*/
+    /** transactionDateInput locator @type {import('@playwright/test').Locator}*/
     this.transactionDateInput = page.locator('#transactionDate')
-    /**@type {import('@playwright/test').Locator} fromDateInput locator*/
+    /** fromDateInput locator @type {import('@playwright/test').Locator}*/
     this.fromDateInput = page.locator('#fromDate')
-    /**@type {import('@playwright/test').Locator} toDateInput locator*/
+    /** toDateInput locator @type {import('@playwright/test').Locator}*/
     this.toDateInput = page.locator('#toDate')
-    /**@type {import('@playwright/test').Locator} amountInput locator*/
+    /** amountInput locator @type {import('@playwright/test').Locator}*/
     this.amountInput = page.locator('#amount')
-    /**@type {import('@playwright/test').Locator} findByIdBtn locator*/
+    /** findByIdBtn locator @type {import('@playwright/test').Locator}*/
     this.findByIdBtn = page.locator('#findById')
-    /**@type {import('@playwright/test').Locator} findByDateBtn locator*/
+    /** findByDateBtn locator @type {import('@playwright/test').Locator}*/
     this.findByDateBtn = page.locator('#findByDate')
-    /**@type {import('@playwright/test').Locator} findByDateRangeBtn locator*/
+    /** findByDateRangeBtn locator @type {import('@playwright/test').Locator}*/
     this.findByDateRangeBtn = page.locator('#findByDateRange')
-    /**@type {import('@playwright/test').Locator} findByAmountBtn locator*/
+    /** findByAmountBtn locator @type {import('@playwright/test').Locator}*/
     this.findByAmountBtn = page.locator('#findByAmount')
-    /**@type {import('@playwright/test').Locator} transactionIdErrorMsg locator*/
+    /** transactionIdErrorMsg locator @type {import('@playwright/test').Locator}*/
     this.transactionIdErrorMsg = page.locator('#transactionIdError')
-    /**@type {import('@playwright/test').Locator} transactionDateErrorMsg locator*/
+    /** transactionDateErrorMsg locator @type {import('@playwright/test').Locator}*/
     this.transactionDateErrorMsg = page.locator('#transactionDateError')
-    /**@type {import('@playwright/test').Locator} dateRangeErrorMsg locator*/
+    /** dateRangeErrorMsg locator @type {import('@playwright/test').Locator}*/
     this.dateRangeErrorMsg = page.locator('#dateRangeError')
-    /**@type {import('@playwright/test').Locator} amountErrorMsg locator*/
+    /** amountErrorMsg locator @type {import('@playwright/test').Locator}*/
     this.amountErrorMsg = page.locator('#amountError')
   }
   /**

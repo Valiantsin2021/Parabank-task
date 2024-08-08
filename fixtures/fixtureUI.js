@@ -5,54 +5,22 @@ import * as base from '@playwright/test'
  * @module Playwright_fixture fixture file to initiate POM instances
  */
 /**
- * @typedef {object} RegisterComponentTestArgs - RegisterComponent test args
+ * @typedef {object} ComponentsTestArgs - HomePage test args
+ * @property {components.HomePage} homePage     - HomePage
  * @property {components.RegisterComponent} registerComponent     - RegisterComponent
- */
-/**
- * @typedef {object} UpdateContactComponentTestArgs - UpdateContactComponent test args
  * @property {components.UpdateContactComponent} updateContactComponent     - UpdateContactComponent
- */
-/**
- * @typedef {object} AccountsOverviewComponentTestArgs - AccountsOverviewComponent test args
  * @property {components.AccountsOverviewComponent} accountsOverviewComponent     - AccountsOverviewComponent
- */
-/**
- * @typedef {object} UserMenuComponentTestArgs - UserMenuComponent test args
  * @property {components.UserMenuComponent} userMenuComponent     - UserMenuComponent
- */
-/**
- * @typedef {object} AccountsCreationComponentTestArgs - AccountsCreationComponent test args
  * @property {components.AccountsCreationComponent} accountsCreationComponent     - AccountsCreationComponent
- */
-/**
- * @typedef {object} AccountDetailsComponentTestArgs - AccountDetailsComponent test args
  * @property {components.AccountDetailsComponent} accountDetailsComponent     - AccountDetailsComponent
- */
-/**
- * @typedef {object} TransferFundsComponentTestArgs - TransferFundsComponent test args
  * @property {components.TransferFundsComponent} transferFundsComponent     - TransferFundsComponent
- */
-/**
- * @typedef {object} BillPayComponentTestArgs - BillPayComponent test args
  * @property {components.BillPayComponent} billPayComponent     - BillPayComponent
- */
-/**
- * @typedef {object} FindTransactionsComponentTestArgs - FindTransactionsComponent test args
  * @property {components.FindTransactionsComponent} findTransactionsComponent     - FindTransactionsComponent
- */
-/**
- * @typedef {object} TransactionDetailsComponentTestArgs - TransactionDetailsComponent test args
  * @property {components.TransactionDetailsComponent} transactionDetailsComponent     - TransactionDetailsComponent
- */
-/**
- * @typedef {object} RequestLoanComponentTestArgs - RequestLoanComponent test args
  * @property {components.RequestLoanComponent} requestLoanComponent     - RequestLoanComponent
  */
-/**
- * @typedef {object} HomePageTestArgs - HomePage test args
- * @property {components.HomePage} homePage     - HomePage
- */
-/** @type {base.Fixtures<RegisterComponentTestArgs & RequestLoanComponentTestArgs & TransactionDetailsComponentTestArgs & FindTransactionsComponentTestArgs & BillPayComponentTestArgs & TransferFundsComponentTestArgs & AccountDetailsComponentTestArgs & AccountsCreationComponentTestArgs & HomePageTestArgs & UpdateContactComponentTestArgs & UserMenuComponentTestArgs & AccountsOverviewComponentTestArgs, {}, base.PlaywrightTestArgs, base.PlaywrightWorkerArgs>} */
+
+/** @type {base.Fixtures<ComponentsTestArgs, {}, base.PlaywrightTestArgs, base.PlaywrightWorkerArgs>} */
 const extension = {
   registerComponent: async ({ page }, use) => {
     const registerComponent = new components.RegisterComponent(page)

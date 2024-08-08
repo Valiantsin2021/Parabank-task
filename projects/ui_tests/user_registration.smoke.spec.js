@@ -37,9 +37,17 @@ test.describe(`Parabank user "Registration" module: `, { tag: '@smoke' }, () => 
       })
     }
   })
-  test(`Successfully register new user`, async ({ registerComponent }) => {
+  test(`Successfully register new user`, async ({ registerComponent, browser }) => {
+    registerComponent.page.on('response', async response => {
+      if (response.request().url() === 'https://parabank.parasoft.com/parabank/register.htm') {
+        expect.soft(response.status()).toEqual(200)
+      }
+    })
     await registerComponent.registerUser(user)
     await expect.soft(await registerComponent.getRegisterSuccessTitle(user.username)).toBeVisible()
     await expect.soft(registerComponent.registerSuccessMsg).toBeVisible()
+    const cookie = await registerComponent.getCookies()
+    expect(cookie).toMatchObject([{ name: 'JSESSIONID' }])
+    expect(cookie[0]['value']).toMatch(/^[0-9A-F]{32}$/)
   })
 })

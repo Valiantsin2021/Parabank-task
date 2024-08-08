@@ -8,28 +8,29 @@ import { HomePage } from '../HomePage.js'
 export class UserMenuComponent extends HomePage {
   /**
    * Class constructor for UserMenuComponent.
+   * @constructor
    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
    */
 
   constructor(page) {
     super(page)
-    /**@type {import('@playwright/test').Page} Page instance passed in the constructor of the POM.*/
+    /**Page instance passed in the constructor of the POM. @type {import('@playwright/test').Page} */
     this.page = page
-    /**@type {import('@playwright/test').Locator} openNewAccount link locator */
+    /** openNewAccount link locator @type {import('@playwright/test').Locator} */
     this.openNewAccountLink = page.getByRole('link', { name: 'Open New Account' })
-    /**@type {import('@playwright/test').Locator} logoutBtn buttoon locator */
+    /** logoutBtn buttoon locator @type {import('@playwright/test').Locator} */
     this.accountsOverviewLink = page.getByRole('link', { name: 'Accounts Overview' })
-    /**@type {import('@playwright/test').Locator} transferFundsLink link locator */
+    /** transferFundsLink link locator @type {import('@playwright/test').Locator} */
     this.transferFundsLink = page.getByRole('link', { name: 'Transfer Funds' })
-    /**@type {import('@playwright/test').Locator} billPayLink link locator */
+    /** billPayLink link locator @type {import('@playwright/test').Locator} */
     this.billPayLink = page.getByRole('link', { name: 'Bill Pay' })
-    /**@type {import('@playwright/test').Locator} findTransactionsLink buttoon locator */
+    /** findTransactionsLink buttoon locator @type {import('@playwright/test').Locator} */
     this.findTransactionsLink = page.getByRole('link', { name: 'Find Transactions' })
-    /**@type {import('@playwright/test').Locator} updateContactLink link locator */
+    /** updateContactLink link locator @type {import('@playwright/test').Locator} */
     this.updateContactLink = page.getByRole('link', { name: 'Update Contact info' })
-    /**@type {import('@playwright/test').Locator} requestLoanLink link locator */
+    /** requestLoanLink link locator @type {import('@playwright/test').Locator} */
     this.requestLoanLink = page.getByRole('link', { name: 'Request Loan' })
-    /**@type {import('@playwright/test').Locator} logoutBtn link locator */
+    /** logoutBtn link locator @type {import('@playwright/test').Locator} */
     this.logoutLink = page.getByRole('link', { name: 'Log Out' })
   }
   /**
