@@ -1,1 +1,1 @@
-[]
+[{"uid":"91c3fa3d6d41be00","name":"Try register new user with missing fields and verify error messages as per pairwise table","time":{"start":1723135240956,"stop":1723135321199,"duration":80243},"status":"failed","severity":"normal"},{"uid":"2e9c06d412198905","name":"authenticate","time":{"start":1723135240948,"stop":1723135326165,"duration":85217},"status":"failed","severity":"normal"}]

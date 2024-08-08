@@ -1,1 +1,1 @@
-{"total":0,"items":[]}
+{"total":2,"items":[{"uid":"572b8c17b974d0c8b1af12566cb72b46","name":"test:ui_setup","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}},{"uid":"00c12ce0e773ce8aaf8a261ba390f056","name":"Smoke_tests","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}}]}
