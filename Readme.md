@@ -4,7 +4,7 @@
 
 ## Welcome to the Playwright Testing Framework Readme! This document provides an overview of the project structure, the tools and technologies used, and how to set up and run tests using Playwright with JavaScript. 
 
-## SUT is "Parabank" web application
+## SUT is ["Parabank"](https://parabank.parasoft.com/parabank) web application
 
 ### Author
 
